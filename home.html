@@ -4,83 +4,96 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>My Website</title>
-  <link rel="stylesheet" href="style.css">
   <style>
+    /* Ubuntu-inspired color scheme */
     :root {
-      --bg-color: #ffffff;
-      --text-color: #000000;
-      --nav-bg: #333;
-      --nav-text: #f2f2f2;
+      --bg-color: #2c001e;    /* deep aubergine */
+      --text-color: #ffffff;  /* light text */
+      --nav-bg: #77216f;      /* Ubuntu purple */
+      --nav-hover: #dd4814;   /* Ubuntu orange */
+      --nav-text: #ffffff;
     }
 
     body.dark-mode {
-      --bg-color: #121212;
+      --bg-color: #1e0f16;
       --text-color: #f2f2f2;
-      --nav-bg: #1e1e1e;
-      --nav-text: #cccccc;
+      --nav-bg: #5e2750;
+      --nav-hover: #e95420;
+      --nav-text: #ffffff;
     }
 
     body {
       background-color: var(--bg-color);
       color: var(--text-color);
-      font-family: Arial, sans-serif;
+      font-family: Ubuntu, Arial, sans-serif;
       margin: 0;
-      padding: 0;
+      display: flex; /* so content sits next to sidebar */
     }
 
+    /* Sidebar (like Ubuntu dock) */
     .navbar {
       background-color: var(--nav-bg);
-      overflow: hidden;
-      position: sticky;
+      width: 200px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding-top: 20px;
+      position: fixed;
       left: 0;
-      z-index: 1000;
+      top: 0;
     }
 
     .navbar a,
     .navbar button {
-      float: left;
-      display: block;
       color: var(--nav-text);
-      text-align: center;
+      text-align: left;
       padding: 14px 20px;
       text-decoration: none;
       border: none;
       background: none;
       font-size: 16px;
       cursor: pointer;
+      display: block;
     }
 
     .navbar a:hover,
     .navbar button:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-    }
-
-    .content {
-      padding: 20px;
+      background-color: var(--nav-hover);
     }
 
     .toggle-btn {
-      float: right;
+      margin-top: auto;
+      text-align: left;
+    }
+
+    /* Main content shifts right so it’s not under the sidebar */
+    .content {
+      margin-left: 200px;
+      padding: 20px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Top navigation bar -->
+  <!-- Left sidebar navigation -->
   <div class="navbar">
     <a href="index.html">Home</a>
     <a href="projects.html">Projects</a>
     <a href="contact.html">Contact</a>
 
-    <!-- Dark mode toggle button -->
-    <button class="toggle-btn" onclick="toggleTheme()">🌙</button>
+    <!-- Dark mode toggle button pinned to bottom -->
+    <button class="toggle-btn" onclick="toggleTheme()">🌙 Toggle</button>
   </div>
 
   <!-- Main content -->
   <div class="content">
-    <h1>Hello, I'm Natasha </h1>
-
-    <p>I'm a student at the <a href="https://robotics.umich.edu/" target="_blank" class="external-link">University of Michigan</a>, currently working in <a href="https://fieldrobotics.engin.umich.edu/" target="_blank">FRoG Lab</a> on exciting research!</p>
+    <h1>Hello, I'm Natasha 👋</h1>
+    <p>
+      I'm a student at the 
+      <a href="https://robotics.umich.edu/" target="_blank" class="external-link">University of Michigan</a>, 
+      currently working in <a href="https://fieldrobotics.engin.umich.edu/" target="_blank">FRoG Lab</a> 
+      on exciting research!
+    </p>
   </div>
 
   <!-- Script to toggle theme -->
