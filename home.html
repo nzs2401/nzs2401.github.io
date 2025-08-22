@@ -3,119 +3,107 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Website</title>
+  <title>Ubuntu-Style Website</title>
   <style>
-    /* Ubuntu-inspired color scheme */
-    :root {
-      --bg-color: #2c001e;    /* deep aubergine */
-      --text-color: #ffffff;  /* light text */
-      --nav-bg: #77216f;      /* Ubuntu purple */
-      --nav-hover: #dd4814;   /* Ubuntu orange */
-      --nav-text: #ffffff;
-    }
-
-    body.dark-mode {
-      --bg-color: #1e0f16;
-      --text-color: #f2f2f2;
-      --nav-bg: #5e2750;
-      --nav-hover: #e95420;
-      --nav-text: #ffffff;
-    }
-
+    /* Ubuntu-inspired gradient background */
     body {
-      background-color: var(--nav-bg);
-      color: var(--text-color);
-      font-family: Ubuntu, Arial, sans-serif;
       margin: 0;
-      display: flex; /* so content sits next to sidebar */
+      font-family: Ubuntu, Arial, sans-serif;
+      color: #fff;
+      background: linear-gradient(135deg, #2c001e 0%, #dd4814 100%);
+      display: flex;
+      min-height: 100vh;
     }
 
-    /* Sidebar (like Ubuntu dock) */
-    .navbar {
-      background-color: var(--bg-color);
-      width: 200px;
-      min-height: 100vh;
+    /* Top panel */
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 28px;
+      background-color: #000;
+      color: #fff;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 10px;
+      z-index: 2000;
+    }
+
+    /* Dock (sidebar) */
+    .dock {
+      position: fixed;
+      top: 28px; /* below topbar */
+      left: 0;
+      width: 60px;
+      height: calc(100% - 28px);
+      background: rgba(0, 0, 0, 0.7);
       display: flex;
       flex-direction: column;
-      padding-top: 20px;
-      position: fixed;
-      left: 0;
-      top: 0;
+      align-items: center;
+      padding-top: 10px;
+      gap: 12px;
     }
 
-    .navbar a,
-    .navbar button {
-      color: var(--nav-text);
-      text-align: left;
-      padding: 14px 20px;
+    .dock a {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-decoration: none;
-      border: none;
-      background: none;
-      font-size: 16px;
-      cursor: pointer;
-      display: block;
+      color: white;
+      font-size: 20px;
+      transition: background 0.3s;
     }
 
-    .navbar a:hover,
-    .navbar button:hover {
-      background-color: var(--nav-hover);
+    .dock a:hover {
+      background: rgba(255, 255, 255, 0.3);
     }
 
-    .toggle-btn {
-      margin-top: 10px;
-      text-align: left;
-    }
-
-    /* Main content shifts right so it’s not under the sidebar */
+    /* Main content */
     .content {
-      margin-left: 200px;
-      padding: 20px;
+      margin-left: 80px; /* leave room for dock */
+      padding: 60px 20px;
+      flex: 1;
+    }
+
+    h1 {
+      font-size: 2.2rem;
     }
   </style>
 </head>
 <body>
 
-  <!-- Left sidebar navigation -->
-  <div class="navbar">
-    <a href="index.html">Home</a>
-    <a href="projects.html">Projects</a>
-    <a href="contact.html">Contact</a>
+  <!-- Top panel -->
+  <div class="topbar">
+    <div>Activities</div>
+    <div>Aug 22  19:34</div>
+    <div>🔊 📶 🔋</div>
+  </div>
 
-    <!-- Dark mode toggle button pinned to bottom -->
-    <button class="toggle-btn" onclick="toggleTheme()">🌙 Toggle</button>
+  <!-- Left dock -->
+  <div class="dock">
+    <a href="index.html">🏠</a>
+    <a href="projects.html">💻</a>
+    <a href="contact.html">✉️</a>
+    <a href="#">🛠️</a>
   </div>
 
   <!-- Main content -->
   <div class="content">
-    <h1>Hello, I'm Natasha </h1>
+    <h1>Hello, I'm Natasha 👋</h1>
     <p>
       I'm a student at the 
-      <a href="https://robotics.umich.edu/" target="_blank" class="external-link">University of Michigan</a>, 
-      currently working in <a href="https://fieldrobotics.engin.umich.edu/" target="_blank">FRoG Lab</a> 
+      <a href="https://robotics.umich.edu/" target="_blank" style="color:#ffd;">University of Michigan</a>, 
+      currently working in <a href="https://fieldrobotics.engin.umich.edu/" target="_blank" style="color:#ffd;">FRoG Lab</a> 
       on exciting research!
     </p>
   </div>
-
-  <!-- Script to toggle theme -->
-  <script>
-    function setTheme(isDark) {
-      document.body.classList.toggle('dark-mode', isDark);
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    }
-
-    function toggleTheme() {
-      const isDark = !document.body.classList.contains('dark-mode');
-      setTheme(isDark);
-    }
-
-    // Load saved theme on page load
-    window.onload = () => {
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme === 'dark') {
-        document.body.classList.add('dark-mode');
-      }
-    };
-  </script>
 
 </body>
 </html>
