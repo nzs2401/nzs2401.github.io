@@ -1,65 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>My Projects</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      background-color: #f9f9f9;
+      margin: 0;
+      font-family: Ubuntu, Arial, sans-serif;
+      color: #fff;
+      background: linear-gradient(135deg, #2c001e 0%, #dd4814 100%);
+      display: flex;
+      min-height: 100vh;
     }
-    header {
-      text-align: center;
-      margin-bottom: 40px;
+
+    /* Top panel */
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 28px;
+      background-color: #000;
+      color: #fff;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 10px;
+      z-index: 2000;
     }
+
+    /* Dock */
+    .dock {
+      position: fixed;
+      top: 28px; /* below topbar */
+      left: 0;
+      width: 60px;
+      height: calc(100% - 28px);
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 10px;
+      gap: 12px;
+    }
+
+    .dock a {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: white;
+      font-size: 20px;
+      transition: background 0.3s;
+    }
+
+    .dock a:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Main content */
+    .content {
+      margin-left: 80px;
+      padding: 60px 20px;
+      flex: 1;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+    }
+
+    /* Projects grid */
     .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
+      margin-top: 30px;
     }
+
     .project-card {
-      background: white;
+      background: rgba(255, 255, 255, 0.1);
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      color: #fff;
     }
+
     .project-card h3 {
       margin-top: 0;
     }
+
     .project-card a {
       display: inline-block;
       margin-top: 10px;
       text-decoration: none;
-      color: #007BFF;
+      color: #ffd;
     }
   </style>
 </head>
 <body>
-  <header>
+
+  <!-- Top panel -->
+  <div class="topbar">
+    <div>Activities</div>
+    <div id="datetime"></div>
+    <div>🔊 📶 🔋</div>
+  </div>
+
+  <!-- Left dock -->
+  <div class="dock">
+    <a href="home.html">🏠</a>
+    <a href="projects.html">💻</a>
+    <a href="visuals.html">📈</a>
+    <a href="#">🛠️</a>
+  </div>
+
+  <!-- Main content -->
+  <div class="content">
     <h1>My Projects</h1>
-    <p>A collection of things I’ve built</p>
-  </header>
+    <p>A collection of things I’ve built:</p>
 
-  <section class="projects">
-    <div class="project-card">
-      <h3>Project One</h3>
-      <p>A short description of your first project.</p>
-      <a href="#">View Project</a>
-    </div>
+    <section class="projects">
+      <div class="project-card">
+        <h3>Project One</h3>
+        <p>A short description of your first project.</p>
+        <a href="#">View Project</a>
+      </div>
 
-    <div class="project-card">
-      <h3>Project Two</h3>
-      <p>A short description of your second project.</p>
-      <a href="#">View Project</a>
-    </div>
+      <div class="project-card">
+        <h3>Project Two</h3>
+        <p>A short description of your second project.</p>
+        <a href="#">View Project</a>
+      </div>
 
-    <div class="project-card">
-      <h3>Project Three</h3>
-      <p>A short description of your third project.</p>
-      <a href="#">View Project</a>
-    </div>
-  </section>
+      <div class="project-card">
+        <h3>Project Three</h3>
+        <p>A short description of your third project.</p>
+        <a href="#">View Project</a>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const options = {
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      };
+      const formatted = now.toLocaleDateString(undefined, options);
+      document.getElementById('datetime').textContent = formatted;
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
+
 </body>
 </html>
