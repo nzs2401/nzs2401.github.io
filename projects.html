@@ -76,12 +76,21 @@
       font-size: 2.2rem;
     }
 
+    h2 {
+      font-size: 1.3rem;
+      margin-top: 42px;
+      margin-bottom: 4px;
+      color: #ffe;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding-bottom: 6px;
+    }
+
     /* Projects grid */
     .projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
-      margin-top: 30px;
+      margin-top: 20px;
     }
 
     .project-card {
@@ -94,6 +103,14 @@
 
     .project-card h3 {
       margin-top: 0;
+      margin-bottom: 4px;
+    }
+
+    .project-card .meta {
+      font-size: 0.85rem;
+      color: #ffd;
+      margin: 0 0 10px 0;
+      opacity: 0.85;
     }
 
     .project-card p {
@@ -120,6 +137,14 @@
       border-radius: 12px;
       margin-bottom: 10px;
     }
+
+    .stack {
+      font-size: 0.85rem;
+      color: #ffe;
+      opacity: 0.8;
+      margin-top: 12px;
+      margin-bottom: 0;
+    }
   </style>
 </head>
 <body>
@@ -142,43 +167,103 @@
     <h1>My Projects</h1>
     <p>A collection of things I've worked on:</p>
 
+    <h2>Publication</h2>
     <section class="projects">
       <div class="project-card">
-        <span class="badge">Accepted — OCEANS 2026</span>
-        <h3>OCEANS 2026 Paper</h3>
-        <p>A paper I co-authored has been accepted to OCEANS 2026. More details coming soon.</p>
-      </div>
-
-      <div class="project-card">
-        <h3>OceanSim: A GPU-Accelerated Underwater Robot Perception Simulation Framework</h3>
-        <p>I worked on implementing a Side Scan Sonar (SSS) sensor into OceanSim, an underwater simulation to improve seafloor mapping capabilities and generate synthetic data to reduce the sim-to-real gap. This work was recognized with a CRA Outstanding Undergraduate Researcher Honorable Mention.</p>
+        <span class="badge">Submitted — OCEANS 2026</span>
+        <h3>GPU-Accelerated Side-Scan Sonar Simulation</h3>
+        <p class="meta">Co-authored · Field Robotics Group, Prof. Skinner</p>
+        <p>Built a GPU-accelerated side-scan sonar simulator in NVIDIA Isaac Sim using CUDA, PhysX, and Warp, modeling acoustic beam patterns and ray tracing to replicate underwater acoustic physics without costly at-sea testing. Validated against real-world shipwreck sonar imagery.</p>
+        <p>Recognized with a CRA Outstanding Undergraduate Researcher Honorable Mention.</p>
 
         <a href="UROPSympPoster_nsieh0.pdf" target="_blank">
           <img src="images/urop_poster_preview.png"
-               alt=" Click here to view my Poster!"
+               alt="Click here to view my poster"
                style="width:100%; border-radius:8px; margin-top:10px;">
         </a>
-        <p>   </p>
         <img src="oceansim.png" alt="OceanSim Simulation" style="width:100%; border-radius:8px; margin-top:10px;">
         <figcaption style="font-size: 0.9rem; color: #ddd; margin-top: 5px;">
           OceanSim seafloor mapping simulation with Side Scan Sonar
         </figcaption>
+        <p class="stack">Isaac Sim · CUDA · PhysX · Warp</p>
+      </div>
+    </section>
+
+    <h2>Building</h2>
+    <section class="projects">
+      <div class="project-card">
+        <h3>Humanoid Locomotion — RoboCup</h3>
+        <p class="meta">RL Control Engineer &amp; Subteam Lead · Michigan Wolverbot Kickers · Jan 2026 – Present</p>
+        <p><strong>URDF reconstruction:</strong> Diagnosed and rebuilt the team's broken humanoid URDF from scratch, re-authoring all joint links and component connections to reach a stable simulation model. Validating dynamics in MuJoCo and training initial ball-contact policies in Isaac Lab.</p>
+        <p><strong>Fall recovery:</strong> Implementing RL models in Isaac Lab to optimize humanoid fall-recovery trajectories across diverse orientations, with evaluation frameworks for velocity vector magnitude and postural stability.</p>
+        <p><strong>Sim-to-real:</strong> Engineering transfer logic to bridge Isaac Lab physics and physical hardware, closing the gap between learned policy and real legged locomotion dynamics.</p>
+        <p>Attending the RoboCup Humanoid League in Incheon, Korea to scout top teams for next season.</p>
+        <p class="stack">Isaac Lab · MuJoCo · RL · URDF</p>
       </div>
 
       <div class="project-card">
-        <h3>Procedural Underwater Terrain Generation for Sim-to-Real (ROB 490)</h3>
-        <p>Independent research with Prof. Katie Skinner building a hybrid terrain generation pipeline for OceanSim. I combined multi-octave Perlin noise with physics-based sediment models — validated Ripple Index geometry, Fourier harmonics for ripple asymmetry, and procedural discontinuities like dead zones, bifurcations, and pattern breaks — then converted heightmaps into USD meshes for NVIDIA Isaac Sim. A PyTorch/VGG-19 neural style transfer stage layers learned texture from real side-scan sonar imagery onto the synthetic terrain, closing the visual gap for perception training data.</p>
+        <h3>Autonomous Ground Vehicle Navigation</h3>
+        <p class="meta">Navigation Engineer · Michigan Autonomous Robot Vehicle (UMARV) · Sept 2024 – April 2025</p>
+        <p>Refined A* and BFS search heuristics in C++ to reduce node expansions, producing 50% faster motion planning and UMARV's best performance at IGVC 2025. Co-authored the IGVC Design Report, a national finalist.</p>
+        <p class="stack">C++ · A*/BFS · ROS</p>
+      </div>
+    </section>
+
+    <h2>Research</h2>
+    <section class="projects">
+      <div class="project-card">
+        <h3>Procedural Terrain Synthesis for Sim-to-Real</h3>
+        <p class="meta">Field Robotics Group, Prof. Skinner · ROB 490</p>
+        <p>Engineered a synthetic data generation pipeline using PyTorch, VGG-19 neural style transfer, and parametric Perlin noise to simulate natural seafloor textures learned from real sonar datasets, bridging the sim-to-real gap for underwater perception.</p>
+        <p>Combined multi-octave Perlin noise with physics-based sediment models — validated Ripple Index geometry, Fourier harmonics for ripple asymmetry, and procedural discontinuities like dead zones, bifurcations, and pattern breaks — then converted heightmaps into USD meshes for Isaac Sim.</p>
         <a href="Final_ROB490_Report_Natasha_Sieh.pdf" target="_blank">Read the full report →</a>
+        <p class="stack">PyTorch · VGG-19 · Isaac Sim · USD</p>
       </div>
 
       <div class="project-card">
-        <h3>Humanoid Locomotion — RoboCup (Michigan Wolverbots)</h3>
-        <p>I lead reinforcement learning and controls for Michigan's RoboCup humanoid soccer team. The work covers policy training for bipedal walking and balance, sim-to-real transfer onto real hardware, and the control stack that keeps the robot upright during dynamic play.</p>
+        <h3>Simulation Infrastructure</h3>
+        <p class="meta">Field Robotics Group, Prof. Skinner · May 2025 – April 2026</p>
+        <p>Implemented a ROS-to-ROS2 node bridge for simulation interoperability across the lab's pipeline.</p>
+        <p class="stack">ROS · ROS2</p>
       </div>
 
       <div class="project-card">
-        <h3>Marine Robotics Research</h3>
-        <p>Summer research placement in Prof. Papalia's marine robotics lab, building on two prior internships at NIWC Pacific working on autonomous underwater systems and perception.</p>
+        <h3>Wearable Artificial Lung — Thermal Control</h3>
+        <p class="meta">Undergraduate Researcher · Extracorporeal Life Support Lab, Prof. Potkay · Sept 2024 – April 2025</p>
+        <p>Implemented C++ embedded temperature control using thermistors and PID feedback for wearable artificial lung prototypes, doubling fabricated thickness with fewer defects.</p>
+        <p class="stack">C++ · PID · Embedded</p>
+      </div>
+    </section>
+
+    <h2>Industry</h2>
+    <section class="projects">
+      <div class="project-card">
+        <h3>RF Calibration Automation</h3>
+        <p class="meta">RF/Autonomous Systems Intern (SEAP) · NIWC Pacific, San Diego · June 2024 – Aug 2024</p>
+        <p>Built a Python-driven GUI to automate RF-over-fiber calibration with real-time SFDR and noise floor algorithms, reducing human error and cutting data collection time by 40%.</p>
+        <p class="stack">Python · GUI · Signal processing</p>
+      </div>
+
+      <div class="project-card">
+        <h3>Quadruped Autonomous Navigation</h3>
+        <p class="meta">Autonomous Navigation Intern (SEAP) · NIWC Pacific, Honolulu · June 2023 – Aug 2023</p>
+        <p>Integrated LiDAR and RGB-D for multi-modal mapping, built an OpenCV object recognition pipeline, and ran Gazebo/ROS 2D SLAM for real-time localization and path planning in unstructured environments.</p>
+        <p class="stack">LiDAR · RGB-D · OpenCV · Gazebo/ROS · SLAM</p>
+      </div>
+    </section>
+
+    <h2>Selected Projects</h2>
+    <section class="projects">
+      <div class="project-card">
+        <h3>Autonomous Swarm for Ecological Restoration</h3>
+        <p>Decentralized swarm stack for autonomous seagrass site identification in low-bandwidth underwater environments. Benchmarked three algorithms against RMSE and confusion matrices.</p>
+        <p class="stack">Swarm algorithms · AFSA</p>
+      </div>
+
+      <div class="project-card">
+        <h3>Autonomous Robot Stack</h3>
+        <p>Custom multithreaded publish-subscribe middleware, forward and inverse kinematics, and A* motion planning built from scratch.</p>
+        <p class="stack">C++ · FK/IK · A* · Pub-sub</p>
       </div>
     </section>
   </div>
