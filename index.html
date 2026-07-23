@@ -85,6 +85,26 @@
       line-height: 1.5;
     }
 
+    /* Link row under the tagline */
+    .links {
+      margin: 18px 0 0 0;
+      padding-bottom: 4px;
+    }
+
+    .links a {
+      color: #ffd;
+      text-decoration: none;
+      margin-right: 20px;
+      font-size: 0.98rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+      padding-bottom: 2px;
+      transition: border-color 0.3s;
+    }
+
+    .links a:hover {
+      border-bottom-color: #ffd;
+    }
+
     /* Highlight banner for the paper */
     .highlight {
       background: rgba(255, 255, 255, 0.15);
@@ -134,17 +154,6 @@
       font-size: 0.95rem;
       margin-bottom: 0;
     }
-
-    .links a {
-      color: #ffd;
-      text-decoration: none;
-      margin-right: 18px;
-      font-size: 1rem;
-    }
-
-    .links a:hover {
-      text-decoration: underline;
-    }
   </style>
 </head>
 <body>
@@ -171,6 +180,13 @@
       Robotics Engineering junior at the University of Michigan. I work on
       reinforcement learning and controls for humanoid locomotion — real
       hardware, sim-to-real, and the messy parts in between.
+    </p>
+
+    <p class="links">
+      <a href="NatashaSieh_Resume.pdf" target="_blank">Résumé</a>
+      <a href="projects.html">Projects</a>
+      <a href="https://github.com/nzs2401" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="UROPSympPoster_nsieh0.pdf" target="_blank">Research poster</a>
     </p>
 
     <div class="highlight">
@@ -212,14 +228,6 @@
         </p>
       </div>
     </div>
-
-    <h2>Elsewhere</h2>
-    <p class="links">
-      <a href="projects.html">Projects</a>
-      <a href="https://github.com/nzs2401" target="_blank">GitHub</a>
-      <a href="UROPSympPoster_nsieh0.pdf" target="_blank">Research poster</a>
-      <a href="NatashaSieh_Resume.pdf" target="_blank">Résumé</a>
-    </p>
   </div>
 
   <script>
