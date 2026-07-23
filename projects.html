@@ -107,6 +107,10 @@
       color: #ffd;
     }
 
+    .project-card a:hover {
+      text-decoration: underline;
+    }
+
     .badge {
       display: inline-block;
       background: rgba(255, 255, 255, 0.2);
@@ -156,6 +160,12 @@
         <figcaption style="font-size: 0.9rem; color: #ddd; margin-top: 5px;">
           OceanSim seafloor mapping simulation with Side Scan Sonar
         </figcaption>
+      </div>
+
+      <div class="project-card">
+        <h3>Procedural Underwater Terrain Generation for Sim-to-Real (ROB 490)</h3>
+        <p>Independent research with Prof. Katie Skinner building a hybrid terrain generation pipeline for OceanSim. I combined multi-octave Perlin noise with physics-based sediment models — validated Ripple Index geometry, Fourier harmonics for ripple asymmetry, and procedural discontinuities like dead zones, bifurcations, and pattern breaks — then converted heightmaps into USD meshes for NVIDIA Isaac Sim. A PyTorch/VGG-19 neural style transfer stage layers learned texture from real side-scan sonar imagery onto the synthetic terrain, closing the visual gap for perception training data.</p>
+        <a href="Final_ROB490_Report_Natasha_Sieh.pdf" target="_blank">Read the full report →</a>
       </div>
 
       <div class="project-card">
