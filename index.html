@@ -201,6 +201,9 @@ h1 .accent { color: var(--accent); }
   margin-bottom: 6px;
 }
 
+.honors strong a { text-decoration: none; border-bottom: 1px solid var(--accent); }
+.honors strong a:hover { color: var(--accent); }
+
 .honors strong {
   display: block;
   font-weight: 500;
@@ -292,6 +295,7 @@ h1 .accent { color: var(--accent); }
 }
 
 .breakdown dd { margin: 0; }
+.breakdown dd a { text-decoration-color: var(--accent); text-underline-offset: 3px; }
 
 .tags {
   display: flex;
@@ -568,6 +572,7 @@ section[id] { scroll-margin-top: 64px; }
       <div class="btns">
         <a class="btn primary" href="#work">Selected work ↓</a>
         <a class="btn" href="#projects">Projects</a>
+        <a class="btn" href="https://arxiv.org/abs/2609.20680" target="_blank" rel="noopener noreferrer">Paper (arXiv)</a>
         <a class="btn" href="UROPSympPoster_nsieh0.pdf" target="_blank">Research poster (PDF)</a>
         <a class="btn" href="https://github.com/nzs2401" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a class="btn" href="https://www.linkedin.com/in/nsieh" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -578,7 +583,7 @@ section[id] { scroll-margin-top: 64px; }
     <!-- ===== Honors strip ===== -->
     <div class="wrap">
       <ul class="honors">
-        <li><span class="label">Publication</span><strong>IEEE OCEANS 2026 co-author</strong></li>
+        <li><span class="label">Publication</span><strong><a href="https://arxiv.org/abs/2609.20680" target="_blank" rel="noopener noreferrer">IEEE OCEANS 2026 co-author ↗</a></strong></li>
         <li><span class="label">Award</span><strong>CRA Outstanding Undergraduate Researcher — National Honorable Mention, 2026</strong></li>
         <li><span class="label">Fellowship</span><strong>UROP Summer Research Fellowship, 2025</strong></li>
         <li><span class="label">Competition</span><strong>IGVC 2025 finalist with UMARV</strong></li>
@@ -641,9 +646,10 @@ section[id] { scroll-margin-top: 64px; }
             <dt>Approach</dt>
             <dd>Independently built the side-scan sonar module for OceanSim using custom CUDA ray-tracing kernels, PhysX, Warp, and OpenUSD scenes.</dd>
             <dt>Outcome</dt>
-            <dd>Qualitatively validated acoustic returns against real shipwreck survey data. Co-authored <em>“Towards Scaling Marine Perception with Synthetic Data”</em> (IEEE OCEANS 2026); CRA National Honorable Mention.</dd>
+            <dd>Qualitatively validated acoustic returns against real shipwreck survey data. Co-authored <a href="https://arxiv.org/abs/2609.20680" target="_blank" rel="noopener noreferrer"><em>“Towards Scaling Marine Perception with Synthetic Data”</em></a> (IEEE OCEANS 2026); CRA National Honorable Mention.</dd>
           </dl>
           <ul class="tags"><li>CUDA</li><li>Isaac Sim</li><li>Warp</li><li>OpenUSD</li><li>Synthetic data</li></ul>
+          <p style="margin:20px 0 0"><a class="inline-link" href="https://arxiv.org/abs/2609.20680" target="_blank" rel="noopener noreferrer">Read the paper on arXiv →</a></p>
         </div>
       </article>
     </section>
