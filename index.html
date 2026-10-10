@@ -611,6 +611,7 @@ section[id] { scroll-margin-top: 64px; }
               <div class="row"><dt>Simulation</dt><dd>MuJoCo</dd></div>
               <div class="row"><dt>Policy</dt><dd>PPO (rsl_rl)</dd></div>
               <div class="row"><dt>Hardware</dt><dd>Pypot joint bring-up</dd></div>
+              <div class="row"><dt>Status</dt><dd>Simplified model → full 20-DOF</dd></div>
             </dl>
           </div>
         </div>
@@ -621,7 +622,7 @@ section[id] { scroll-margin-top: 64px; }
             <dt>Challenge</dt>
             <dd>Bridging the sim-to-real gap for a bipedal RoboCup humanoid under tight mass and contact-physics constraints.</dd>
             <dt>Approach</dt>
-            <dd>Exported Onshape CAD to USD/URDF, verified per-link masses, and stabilized MuJoCo contact physics. Trained velocity-tracking PPO policies with multi-objective reward shaping.</dd>
+            <dd>Exported Onshape CAD to USD/URDF, verified per-link masses, and stabilized MuJoCo contact physics. Trained velocity-tracking PPO policies with multi-objective reward shaping. Currently training on a simplified robot model before scaling up to the full 20-DOF humanoid.</dd>
             <dt>Outcome</dt>
             <dd>Debugged reward plateaus and inverted-knee gaits; built physical joint-verification workflows for Pypot hardware bring-up.</dd>
           </dl>
@@ -664,7 +665,7 @@ section[id] { scroll-margin-top: 64px; }
         <div class="cell">
           <p class="kicker">Current</p>
           <h4>RL &amp; controls lead, Michigan Wolverbots</h4>
-          <p>Teaching bipeds to walk, balance, and recover on real hardware. Also TA for ROB 101 (Computational Linear Algebra).</p>
+          <p>Teaching bipeds to walk, balance, and recover in simulation, then on real hardware.</p>
         </div>
         <div class="cell">
           <p class="kicker">Previously</p>
