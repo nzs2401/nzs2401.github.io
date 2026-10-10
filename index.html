@@ -15,12 +15,14 @@
    ========================================================== */
 
 :root {
-  --paper: #f5f3ee;
-  --card: #fffdf9;
-  --ink: #17171b;
-  --muted: #5d5d68;
-  --line: #dcd7cc;
-  --accent: #d9480f;
+  --paper: #f4f0fc;    /* light lavender */
+  --card: #fbf9ff;
+  --ink: #1d1830;      /* deep purple-black */
+  --muted: #5d5672;
+  --line: #ddd5ef;
+  --brand: #5b3fa8;    /* purple — primary button, section rules */
+  --brand-ink: #ffffff;
+  --accent: #8a5c00;   /* gold — complementary to purple */
   --accent-ink: #ffffff;
 
   --serif: "Instrument Serif", Georgia, serif;
@@ -32,13 +34,15 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --paper: #111113;
-    --card: #18181b;
-    --ink: #ecebe6;
-    --muted: #9b9aa4;
-    --line: #2b2b31;
-    --accent: #ff6b35;
-    --accent-ink: #111113;
+    --paper: #16121f;
+    --card: #1d1829;
+    --ink: #ece8f7;
+    --muted: #a39cba;
+    --line: #2f2842;
+    --brand: #c2adf5;
+    --brand-ink: #16121f;
+    --accent: #f2b544;
+    --accent-ink: #16121f;
     color-scheme: dark;
   }
 }
@@ -174,7 +178,7 @@ h1 .accent { color: var(--accent); }
   transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
 
-.btn.primary { background: var(--ink); color: var(--paper); }
+.btn.primary { background: var(--brand); border-color: var(--brand); color: var(--brand-ink); }
 
 .btn:hover {
   background: var(--accent);
@@ -256,7 +260,7 @@ h1 .accent { color: var(--accent); }
   display: flex;
   align-items: baseline;
   gap: 16px;
-  border-top: 1px solid var(--ink);
+  border-top: 2px solid var(--brand);
   padding-top: 14px;
   margin-bottom: 8px;
 }
