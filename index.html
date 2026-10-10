@@ -754,6 +754,28 @@ section[id] { scroll-margin-top: 64px; }
         <h2>Additional Projects</h2>
       </div>
 
+      <article class="project" id="terrain">
+        <aside class="project-meta">
+          <dl>
+            <dt>Course</dt><dd>ROB 490 — Prof. Katie Skinner</dd>
+            <dt>When</dt><dd>Fall 2025</dd>
+            <dt>Stack</dt><dd>Python, PyTorch (VGG-19), Isaac Sim 5.0, OpenUSD</dd>
+          </dl>
+        </aside>
+        <div>
+          <p class="kicker">Research · Synthetic data · Sim-to-real</p>
+          <h3>Procedural Generation of High-Fidelity Underwater Terrains Using Neural Style Transfer and Geometric Discontinuities to Bridge the Sim-to-Real Gap</h3>
+          <p>Built a hybrid parametric and PyTorch pipeline that generates realistic seafloor terrains for OceanSim. Heightmaps combine multi-scale Perlin noise with physics-based sediment-transport models to produce flat plains, sand ripples, and volcanic seamounts, then convert to Isaac Sim USD meshes with material properties for acoustic simulation.</p>
+          <p>Added the irregularities found on real seafloors (ripple bifurcations, dead zones, and pattern breaks) and used neural style transfer (PyTorch, VGG-19) to layer textures learned from real sonar imagery onto the synthetic terrain.</p>
+          <ul class="tags"><li>Procedural generation</li><li>Perlin noise</li><li>Neural style transfer</li><li>PyTorch</li><li>Isaac Sim</li><li>OpenUSD</li></ul>
+          <p style="margin:20px 0 0"><a class="inline-link" href="Final_ROB490_Report_Natasha_Sieh.pdf" target="_blank">Read the full report (PDF) →</a></p>
+          <figure style="margin-top:24px">
+            <a href="Procedural%20Generation%20of%20High-Fidelity%20Underwater%20Terrains%20Using%20Neural%20Style%20Transfer%20and%20Geometric%20Discontinuities%20to%20Bridge%20the%20Sim-to-Real%20Gap.png" target="_blank"><img src="Procedural%20Generation%20of%20High-Fidelity%20Underwater%20Terrains%20Using%20Neural%20Style%20Transfer%20and%20Geometric%20Discontinuities%20to%20Bridge%20the%20Sim-to-Real%20Gap.png" alt="System architecture: parameter definition, heightmap generation, USD mesh creation, and PyTorch VGG-19 texture transfer in Isaac Sim 5.0" loading="lazy" /></a>
+            <figcaption>Pipeline: parameter definition → heightmap generation → USD mesh creation → PyTorch/VGG-19 texture transfer in Isaac Sim 5.0.</figcaption>
+          </figure>
+        </div>
+      </article>
+
       <article class="project" id="hil">
         <aside class="project-meta">
           <dl>
@@ -898,7 +920,7 @@ section[id] { scroll-margin-top: 64px; }
         </a>
         <a class="cell" href="Final_ROB490_Report_Natasha_Sieh.pdf" target="_blank">
           <p class="kicker">PDF</p>
-          <h4>ROB 490 final report</h4>
+          <h4>ROB 490 — Procedural Generation of High-Fidelity Underwater Terrains Using Neural Style Transfer and Geometric Discontinuities to Bridge the Sim-to-Real Gap</h4>
           <span class="arrow">Open →</span>
         </a>
       </div>
@@ -913,7 +935,7 @@ section[id] { scroll-margin-top: 64px; }
       <div class="stack">
         <div><h4>Languages</h4><ul><li>C++17</li><li>Python</li><li>CUDA</li></ul></div>
         <div><h4>Simulation &amp; learning</h4><ul><li>Isaac Sim / Isaac Lab</li><li>MuJoCo</li><li>Warp, PhysX, OpenUSD</li></ul></div>
-        <div><h4>Robotics</h4><ul><li>ROS2</li><li>PCL</li><li>Sensor fusion</li><li>SLAM</li><li>Kinematics &amp; planning</li></ul></div>
+        <div><h4>Robotics</h4><ul><li>ROS2</li><li>PCL</li><li>Sensor fusion (EKF)</li><li>SLAM</li><li>Kinematics &amp; planning</li></ul></div>
         <div><h4>Hardware</h4><ul><li>CAD</li><li>Embedded C++</li><li>PID control</li><li>HIL testing</li><li>Pypot / servo bring-up</li></ul></div>
       </div>
     </section>
