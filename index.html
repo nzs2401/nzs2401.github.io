@@ -319,7 +319,8 @@ h1 .accent { color: var(--accent); }
 
 figure { margin: 0; }
 
-figure img {
+figure img,
+figure video {
   width: 100%;
   border: 1px solid var(--line);
   background: var(--card);
@@ -634,8 +635,12 @@ section[id] { scroll-margin-top: 64px; }
       <article class="case">
         <div class="case-media">
           <figure>
+            <video src="SSS_video.webm" autoplay muted loop playsinline controls preload="metadata" aria-label="Side-scan sonar simulation running in OceanSim"></video>
+            <figcaption>FIG. 02 — Side-scan sonar simulation in OceanSim</figcaption>
+          </figure>
+          <figure style="margin-top:24px">
             <img src="oceansim.png" alt="Side-scan sonar simulation in OceanSim" loading="lazy" />
-            <figcaption>FIG. 02 — OceanSim side-scan sonar</figcaption>
+            <figcaption>FIG. 03 — OceanSim side-scan sonar</figcaption>
           </figure>
         </div>
         <div class="case-body">
