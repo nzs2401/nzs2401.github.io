@@ -523,6 +523,11 @@ a.cell:hover { background: var(--paper); }
   .section { padding-top: 64px; }
 }
 
+@media (max-width: 560px) {
+  .brand { white-space: nowrap; }
+  .site-header nav a[target="_blank"], .site-header nav a[href="#toolkit"] { display: none; }
+}
+
 @media (max-width: 420px) {
   .honors, .stack { grid-template-columns: 1fr; }
   .footer-inner a { margin: 0 14px 0 0; }
@@ -544,6 +549,7 @@ section[id] { scroll-margin-top: 64px; }
         <a href="#projects">Projects</a>
         <a href="#toolkit">Toolkit</a>
         <a href="https://github.com/nzs2401" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/nsieh" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </nav>
     </div>
   </header>
@@ -552,7 +558,7 @@ section[id] { scroll-margin-top: 64px; }
 
     <!-- ===== Hero ===== -->
     <section class="wrap hero">
-      <p class="eyebrow">Robotics Engineering · University of Michigan · Class of 2028</p>
+      <p class="eyebrow">B.S. Robotics Engineering · University of Michigan · Expected Dec 2027 · U.S. Citizen</p>
       <h1>Natasha Sieh<span class="accent">.</span></h1>
       <p class="lede">
         I work on reinforcement learning and controls for humanoid locomotion —
@@ -564,6 +570,7 @@ section[id] { scroll-margin-top: 64px; }
         <a class="btn" href="#projects">Projects</a>
         <a class="btn" href="UROPSympPoster_nsieh0.pdf" target="_blank">Research poster (PDF)</a>
         <a class="btn" href="https://github.com/nzs2401" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/nsieh" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </div>
       <p class="note">Résumé available upon request.</p>
     </section>
@@ -572,7 +579,7 @@ section[id] { scroll-margin-top: 64px; }
     <div class="wrap">
       <ul class="honors">
         <li><span class="label">Publication</span><strong>IEEE OCEANS 2026 co-author</strong></li>
-        <li><span class="label">Award</span><strong>CRA Outstanding Undergraduate Researcher — Honorable Mention</strong></li>
+        <li><span class="label">Award</span><strong>CRA Outstanding Undergraduate Researcher — National Honorable Mention, 2026</strong></li>
         <li><span class="label">Fellowship</span><strong>UROP Summer Research Fellowship, 2025</strong></li>
         <li><span class="label">Competition</span><strong>IGVC 2025 finalist with UMARV</strong></li>
       </ul>
@@ -634,7 +641,7 @@ section[id] { scroll-margin-top: 64px; }
             <dt>Approach</dt>
             <dd>Independently built the side-scan sonar module for OceanSim using custom CUDA ray-tracing kernels, PhysX, Warp, and OpenUSD scenes.</dd>
             <dt>Outcome</dt>
-            <dd>Qualitatively validated acoustic returns against real shipwreck survey data. Co-authored <em>“Towards Scaling Marine Perception with Synthetic Data”</em> (IEEE OCEANS 2026); CRA Honorable Mention.</dd>
+            <dd>Qualitatively validated acoustic returns against real shipwreck survey data. Co-authored <em>“Towards Scaling Marine Perception with Synthetic Data”</em> (IEEE OCEANS 2026); CRA National Honorable Mention.</dd>
           </dl>
           <ul class="tags"><li>CUDA</li><li>Isaac Sim</li><li>Warp</li><li>OpenUSD</li><li>Synthetic data</li></ul>
         </div>
@@ -734,6 +741,34 @@ section[id] { scroll-margin-top: 64px; }
         </div>
       </article>
 
+      <article class="project" id="hackathon">
+        <aside class="project-meta">
+          <dl>
+            <dt>Context</dt><dd>Y Combinator hackathon</dd>
+            <dt>Focus</dt><dd>Rapid prototyping</dd>
+          </dl>
+        </aside>
+        <div>
+          <p class="kicker">Hackathon</p>
+          <h3>Rapid MVP development</h3>
+          <p>Designed and deployed a technical prototype under strict time constraints, owning the build end to end through rapid iteration and cross-functional problem-solving.</p>
+        </div>
+      </article>
+
+      <article class="project" id="eng100">
+        <aside class="project-meta">
+          <dl>
+            <dt>Course</dt><dd>ENG 100</dd>
+            <dt>Type</dt><dd>Hardware design build</dd>
+          </dl>
+        </aside>
+        <div>
+          <p class="kicker">Mechanical design</p>
+          <h3>Backpack holder</h3>
+          <p>Designed and built a backpack holder as a hands-on engineering design project.</p>
+        </div>
+      </article>
+
       <div class="grid-2">
         <a class="cell" href="UROPSympPoster_nsieh0.pdf" target="_blank">
           <p class="kicker">PDF</p>
@@ -770,6 +805,7 @@ section[id] { scroll-margin-top: 64px; }
       <span>
         <a href="#top">Back to top ↑</a>
         <a href="https://github.com/nzs2401" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/nsieh" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </span>
     </div>
   </footer>
