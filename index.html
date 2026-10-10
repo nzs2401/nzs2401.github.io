@@ -865,8 +865,14 @@ section[id] { scroll-margin-top: 64px; }
         <div>
           <p class="kicker">Design · Perception · Control</p>
           <h3>Autonomous human-following carrier</h3>
-          <p>Prototyped chassis components with CAD modeling and 3D printing to securely house the compute and sensor suite. Implemented RGB-D depth tracking and LiDAR data streams to lock onto and follow a person's movement.</p>
-          <p>Engineered reactive velocity and braking control so the platform halts at a minimum safe distance whenever the target stops.</p>
+          <dl class="breakdown">
+            <dt>Mechanical &amp; CAD design</dt>
+            <dd>Prototyped physical chassis components using CAD modeling and 3D printing to house the compute and sensor suite securely.</dd>
+            <dt>Perception &amp; tracking</dt>
+            <dd>Implemented RGB-D depth tracking and LiDAR data streams to lock onto and track human movement dynamically.</dd>
+            <dt>Closed-loop safety control</dt>
+            <dd>Engineered reactive velocity and braking algorithms ensuring the platform halts at a precise, minimum safe distance whenever the target stops.</dd>
+          </dl>
           <ul class="tags"><li>CAD</li><li>3D printing</li><li>RGB-D</li><li>LiDAR</li><li>Safety control</li></ul>
           <figure style="margin-top:24px;max-width:320px">
             <video src="pati_video.webm" autoplay muted loop playsinline controls preload="metadata" aria-label="Wheeled robot carrying a bag and water bottle across a building atrium"></video>
