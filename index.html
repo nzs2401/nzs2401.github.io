@@ -516,11 +516,6 @@ a.cell:hover { background: var(--paper); }
 
 .project p { margin: 0 0 14px; max-width: 64ch; }
 
-.bullets { margin: 0 0 14px; padding-left: 18px; max-width: 64ch; }
-.bullets li { margin-bottom: 10px; }
-.bullets li::marker { color: var(--accent); }
-.bullets strong { font-weight: 600; }
-
 .inline-link {
   font-family: var(--mono);
   font-size: 13px;
@@ -769,7 +764,8 @@ section[id] { scroll-margin-top: 64px; }
           <h3>Closed-loop PID thermal regulation for wearable artificial lungs</h3>
           <p>Implemented real-time, bare-metal C++ thermistor control loops with closed-loop PID for a roll-to-roll fabrication process, and ran hardware-in-the-loop testing on the bench.</p>
           <p>Resolved integration bottlenecks in the process, doubling fabricated membrane thickness with zero visual defects.</p>
-          <a class="inline-link" href="artificial_lung_poster.pdf" target="_blank">View artificial lung poster (PDF) →</a>
+          <ul class="tags"><li>Embedded C++</li><li>PID</li><li>HIL testing</li></ul>
+          <p style="margin:20px 0 0"><a class="inline-link" href="artificial_lung_poster.pdf" target="_blank">View artificial lung poster (PDF) →</a></p>
         </div>
       </article>
 
@@ -849,12 +845,12 @@ section[id] { scroll-margin-top: 64px; }
           <p class="kicker">Hackathon · Swarm intelligence</p>
           <h3>Agricultural swarm for precision pesticide optimization</h3>
           <p>Applied swarm intelligence to real satellite (NDVI) and geospatial data, reducing treated field area to ~9%.</p>
-          <p><a class="inline-link" href="https://github.com/c1th/compiled-13-agri" target="_blank" rel="noopener noreferrer">View code on GitHub →</a></p>
+          <ul class="tags"><li>Swarm intelligence</li><li>NDVI</li><li>Geospatial data</li><li>Precision agriculture</li></ul>
+          <p style="margin:20px 0 0"><a class="inline-link" href="https://github.com/c1th/compiled-13-agri" target="_blank" rel="noopener noreferrer">View code on GitHub →</a></p>
           <figure style="margin-top:24px">
             <a href="YC.png" target="_blank"><img src="YC.png" alt="FieldLoop app: satellite field map with a color-coded treatment overlay and a recommended biopesticide distribution by zone" loading="lazy" /></a>
             <figcaption>FieldLoop: satellite field map with a treatment-zone overlay and recommended product distribution, including zones diagnosed as needing no spray.</figcaption>
           </figure>
-          <ul class="tags"><li>Swarm intelligence</li><li>NDVI</li><li>Geospatial data</li><li>Precision agriculture</li></ul>
         </div>
       </article>
 
@@ -869,11 +865,9 @@ section[id] { scroll-margin-top: 64px; }
         <div>
           <p class="kicker">Design · Perception · Control</p>
           <h3>Autonomous human-following carrier</h3>
-          <ul class="bullets">
-            <li><strong>Mechanical &amp; CAD design:</strong> Prototyped physical chassis components using CAD modeling and 3D printing to house the compute and sensor suite securely.</li>
-            <li><strong>Perception &amp; tracking:</strong> Implemented RGB-D depth tracking and LiDAR data streams to lock onto and track human movement dynamically.</li>
-            <li><strong>Closed-loop safety control:</strong> Engineered reactive velocity and braking algorithms so the platform halts at a minimum safe distance whenever the target stops.</li>
-          </ul>
+          <p>Prototyped chassis components with CAD modeling and 3D printing to securely house the compute and sensor suite. Implemented RGB-D depth tracking and LiDAR data streams to lock onto and follow a person's movement.</p>
+          <p>Engineered reactive velocity and braking control so the platform halts at a minimum safe distance whenever the target stops.</p>
+          <ul class="tags"><li>CAD</li><li>3D printing</li><li>RGB-D</li><li>LiDAR</li><li>Safety control</li></ul>
           <figure style="margin-top:24px;max-width:320px">
             <video src="pati_video.webm" autoplay muted loop playsinline controls preload="metadata" aria-label="Wheeled robot carrying a bag and water bottle across a building atrium"></video>
             <figcaption>The carrier transporting a bag and water bottle.</figcaption>
