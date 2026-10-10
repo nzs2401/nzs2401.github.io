@@ -116,20 +116,21 @@ img { max-width: 100%; display: block; }
 
 .eyebrow {
   font-family: var(--mono);
-  font-size: 13px;
-  color: var(--muted);
+  font-size: clamp(14px, 1.6vw, 16px);
+  line-height: 1.6;
+  color: var(--ink);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  margin: 0 0 20px;
+  margin: 0 0 28px;
 }
 
 h1 {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: clamp(56px, 11vw, 124px);
+  font-size: clamp(44px, 7vw, 80px);
   line-height: 0.95;
   letter-spacing: -0.02em;
-  margin: 0 0 28px;
+  margin: 0 0 16px;
 }
 
 h1 .accent { color: var(--accent); }
@@ -189,6 +190,8 @@ h1 .accent { color: var(--accent); }
 .honors li {
   background: var(--paper);
   padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .honors .label {
@@ -204,8 +207,27 @@ h1 .accent { color: var(--accent); }
 .honors strong a { text-decoration: none; border-bottom: 1px solid var(--accent); }
 .honors strong a:hover { color: var(--accent); }
 
+.honor-thumb {
+  display: block;
+  margin-top: auto;
+  border: 1px solid var(--line);
+  background: var(--card);
+  overflow: hidden;
+  transition: border-color 0.15s;
+}
+
+.honor-thumb img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: top;
+}
+
+.honor-thumb:hover { border-color: var(--accent); }
+
 .honors strong {
   display: block;
+  margin-bottom: 14px;
   font-weight: 500;
   font-size: 15px;
   line-height: 1.4;
@@ -563,8 +585,8 @@ section[id] { scroll-margin-top: 64px; }
 
     <!-- ===== Hero ===== -->
     <section class="wrap hero">
-      <p class="eyebrow">B.S. Robotics Engineering · University of Michigan · Expected Dec 2027 · U.S. Citizen</p>
       <h1>Natasha Sieh<span class="accent">.</span></h1>
+      <p class="eyebrow">B.S. Robotics Engineering · University of Michigan · Expected Dec 2027<br />U.S. Citizen</p>
       <p class="lede">
         I work on reinforcement learning and controls for humanoid locomotion —
         real hardware, sim-to-real, and the messy parts in between. Before that,
@@ -584,10 +606,13 @@ section[id] { scroll-margin-top: 64px; }
     <!-- ===== Honors strip ===== -->
     <div class="wrap">
       <ul class="honors">
-        <li><span class="label">Publication</span><strong><a href="https://arxiv.org/abs/2609.20680" target="_blank" rel="noopener noreferrer">IEEE OCEANS 2026 co-author ↗</a></strong></li>
-        <li><span class="label">Award</span><strong>CRA Outstanding Undergraduate Researcher — National Honorable Mention, 2026</strong></li>
+        <li><span class="label">Publication</span><strong><a href="https://arxiv.org/abs/2609.20680" target="_blank" rel="noopener noreferrer">IEEE OCEANS 2026 co-author ↗</a></strong>
+          <a class="honor-thumb" href="https://arxiv.org/abs/2609.20680" target="_blank" rel="noopener noreferrer"><img src="paper_icon.png" alt="First page of Towards Scaling Marine Perception with Synthetic Data" loading="lazy" /></a></li>
+        <li><span class="label">Award</span><strong>CRA Outstanding Undergraduate Researcher — National Honorable Mention, 2026</strong>
+          <a class="honor-thumb" href="cra_award.png" target="_blank"><img src="cra_award.png" alt="CRA Outstanding Undergraduate Researcher Award certificate, Honorable Mention, presented to Natasha Sieh" loading="lazy" /></a></li>
         <li><span class="label">Fellowship</span><strong>UROP Summer Research Fellowship, 2025</strong></li>
-        <li><span class="label">Competition</span><strong>IGVC 2025 finalist with UMARV</strong></li>
+        <li><span class="label">Competition</span><strong>IGVC 2025 finalist with UMARV</strong>
+          <a class="honor-thumb" href="igvc%20report.png" target="_blank"><img src="igvc%20report.png" alt="Cover page of the team's IGVC 2025 design report" loading="lazy" /></a></li>
       </ul>
     </div>
 
