@@ -135,6 +135,21 @@ h1 {
 
 h1 .accent { color: var(--accent); }
 
+.hero-top {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-photo {
+  flex: 0 0 auto;
+  width: 200px;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border: 1px solid var(--line);
+}
+
 .lede {
   font-size: clamp(18px, 2.2vw, 22px);
   line-height: 1.5;
@@ -550,6 +565,11 @@ a.cell:hover { background: var(--paper); }
   .section { padding-top: 64px; }
 }
 
+@media (max-width: 640px) {
+  .hero-top { flex-direction: column; align-items: flex-start; gap: 24px; }
+  .hero-photo { width: 140px; }
+}
+
 @media (max-width: 560px) {
   .brand { white-space: nowrap; }
   .site-header nav a[target="_blank"], .site-header nav a[href="#toolkit"] { display: none; }
@@ -585,13 +605,18 @@ section[id] { scroll-margin-top: 64px; }
 
     <!-- ===== Hero ===== -->
     <section class="wrap hero">
-      <h1>Natasha Sieh<span class="accent">.</span></h1>
-      <p class="eyebrow">B.S. Robotics Engineering · University of Michigan · Expected Dec 2027<br />U.S. Citizen</p>
-      <p class="lede">
-        I work on reinforcement learning and controls for humanoid locomotion —
-        real hardware, sim-to-real, and the messy parts in between. Before that,
-        GPU-accelerated sonar simulation for marine perception.
-      </p>
+      <div class="hero-top">
+        <img class="hero-photo" src="profile.png" alt="Portrait of Natasha Sieh" width="200" height="266" />
+        <div class="hero-text">
+          <h1>Natasha Sieh<span class="accent">.</span></h1>
+          <p class="eyebrow">B.S. Robotics Engineering · University of Michigan · Expected Dec 2027<br />U.S. Citizen</p>
+          <p class="lede">
+            I work on reinforcement learning and controls for humanoid locomotion —
+            real hardware, sim-to-real, and the messy parts in between. Before that,
+            GPU-accelerated sonar simulation for marine perception.
+          </p>
+        </div>
+      </div>
       <div class="btns">
         <a class="btn primary" href="#work">Selected work ↓</a>
         <a class="btn" href="#projects">Projects</a>
@@ -835,7 +860,7 @@ section[id] { scroll-margin-top: 64px; }
           <h3>Backpack holder</h3>
           <p>Designed and built a backpack holder as a hands-on engineering design project.</p>
           <figure style="margin-top:24px;max-width:320px">
-            <video src="pati_video.webm" autoplay muted loop playsinline controls preload="metadata" aria-label="Wheeled robot carrying a bag and water bottle across a building atrium"></video>
+            <video src="bot_carrying_items_part_1.webm" autoplay muted loop playsinline controls preload="metadata" aria-label="Wheeled robot carrying a bag and water bottle across a building atrium"></video>
             <figcaption>The robot carrying items.</figcaption>
           </figure>
         </div>
