@@ -626,11 +626,13 @@ section[id] { scroll-margin-top: 64px; }
             <dt>Challenge</dt>
             <dd>Bridging the sim-to-real gap for a bipedal RoboCup humanoid under tight mass and contact-physics constraints.</dd>
             <dt>Approach</dt>
-            <dd>Exported Onshape CAD to USD/URDF, verified per-link masses, and stabilized MuJoCo contact physics. Trained velocity-tracking RL policies with multi-objective reward shaping. Currently training on a simplified robot model before scaling up to the full 20-DOF humanoid.</dd>
+            <dd>Exported Onshape CAD to USD/URDF, verified per-link masses, and stabilized MuJoCo contact physics. Trained a velocity-tracking PPO policy with multi-objective reward shaping. Currently training on a simplified robot model before scaling up to the full 20-DOF humanoid.</dd>
             <dt>Outcome</dt>
             <dd>Debugged reward plateaus and inverted-knee gaits; built physical joint-verification workflows for Pypot hardware bring-up.</dd>
+            <dt>Safety</dt>
+            <dd>Adapted reachability-based trajectory design (RTD) in Python/NumPy to compute safe shooting zones for the humanoid. Modeled ±8° aim error and ±15% kick-speed error, comparing a worst-case guaranteed-safe boundary against Monte Carlo success probability. The worst-case safe zone came out 22% smaller than the nominal one (FIG. 01).</dd>
           </dl>
-          <ul class="tags"><li>Reinforcement learning</li><li>MuJoCo</li><li>URDF / USD</li><li>Sim-to-real</li></ul>
+          <ul class="tags"><li>Reinforcement learning</li><li>MuJoCo</li><li>URDF / USD</li><li>Sim-to-real</li><li>Reachability analysis</li><li>Monte Carlo</li></ul>
         </div>
       </article>
 
