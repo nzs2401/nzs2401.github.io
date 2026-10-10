@@ -516,6 +516,11 @@ a.cell:hover { background: var(--paper); }
 
 .project p { margin: 0 0 14px; max-width: 64ch; }
 
+.bullets { margin: 0 0 14px; padding-left: 18px; max-width: 64ch; }
+.bullets li { margin-bottom: 10px; }
+.bullets li::marker { color: var(--accent); }
+.bullets strong { font-weight: 600; }
+
 .inline-link {
   font-family: var(--mono);
   font-size: 13px;
@@ -611,9 +616,9 @@ section[id] { scroll-margin-top: 64px; }
           <h1>Natasha Sieh<span class="accent">.</span></h1>
           <p class="eyebrow">B.S. Robotics Engineering · University of Michigan · Expected Dec 2027<br />U.S. Citizen</p>
           <p class="lede">
-            I work on reinforcement learning and controls for humanoid locomotion —
-            real hardware, sim-to-real, and the messy parts in between. Before that,
-            GPU-accelerated sonar simulation for marine perception.
+            Focusing on simulation-to-real reinforcement learning, kinematic modeling,
+            and closed-loop control for complex robotic systems—bridging advanced
+            simulation with physical hardware deployability across autonomous platforms.
           </p>
         </div>
       </div>
@@ -710,6 +715,8 @@ section[id] { scroll-margin-top: 64px; }
             <dd>At-sea acoustic sensor testing is slow and expensive; high-fidelity synthetic environments can replace much of it.</dd>
             <dt>Approach</dt>
             <dd>Independently built the side-scan sonar module for OceanSim using custom CUDA ray-tracing kernels, PhysX, Warp, and OpenUSD scenes.</dd>
+            <dt>Support</dt>
+            <dd>UROP Summer Research Fellowship, 2025</dd>
             <dt>Outcome</dt>
             <dd>Qualitatively validated acoustic returns against real shipwreck survey data. Recognized with a CRA National Honorable Mention.</dd>
             <dt>Publication</dt>
@@ -752,7 +759,7 @@ section[id] { scroll-margin-top: 64px; }
         <aside class="project-meta">
           <dl>
             <dt>Context</dt><dd>Potkay Lab (ECLS)</dd>
-            <dt>Support</dt><dd>UROP Summer Research Fellowship, 2025</dd>
+            <dt>When</dt><dd>Sept 2024 – Apr 2025</dd>
             <dt>Stack</dt><dd>Embedded C++, PID, HIL</dd>
           </dl>
           <a class="honor-thumb" href="artificial_lung_poster.pdf" target="_blank" style="margin-top:20px"><img src="artificial_lung_poster.jpg" alt="Poster: Development of a Rolled Human-Scale Microfluidic Artificial Lung" loading="lazy" style="aspect-ratio:auto" /></a>
@@ -790,8 +797,9 @@ section[id] { scroll-margin-top: 64px; }
       <article class="project" id="swarm">
         <aside class="project-meta">
           <dl>
-            <dt>Course</dt><dd>ROB 572</dd>
-            <dt>Stack</dt><dd>Python, NOAA bathymetry</dd>
+            <dt>Course</dt><dd>ROB 472/572 — Marine Robotics</dd>
+            <dt>When</dt><dd>Winter 2026</dd>
+            <dt>Stack</dt><dd>Python, NOAA bathymetry, swarm</dd>
           </dl>
         </aside>
         <div>
@@ -810,8 +818,9 @@ section[id] { scroll-margin-top: 64px; }
       <article class="project" id="middleware">
         <aside class="project-meta">
           <dl>
-            <dt>Course</dt><dd>ROB 320</dd>
-            <dt>Stack</dt><dd>C++, TCP/IP, Unix sockets</dd>
+            <dt>Course</dt><dd>ROB 320 — Robot Operating Systems</dd>
+            <dt>When</dt><dd>Winter 2026</dd>
+            <dt>Stack</dt><dd>C++, TCP/IP, Unix sockets, FK/IK, robot arm</dd>
           </dl>
         </aside>
         <div>
@@ -833,6 +842,7 @@ section[id] { scroll-margin-top: 64px; }
             <dt>Context</dt><dd>YC Hackathon</dd>
             <dt>When</dt><dd>July 2026</dd>
             <dt>Data</dt><dd>Satellite NDVI, geospatial</dd>
+            <dt>Stack</dt><dd>Swarm</dd>
           </dl>
         </aside>
         <div>
@@ -851,17 +861,22 @@ section[id] { scroll-margin-top: 64px; }
       <article class="project" id="eng100">
         <aside class="project-meta">
           <dl>
-            <dt>Course</dt><dd>ENG 100</dd>
-            <dt>Type</dt><dd>Hardware design build</dd>
+            <dt>Course</dt><dd>ENGR 100.850</dd>
+            <dt>When</dt><dd>Fall 2024</dd>
+            <dt>Stack</dt><dd>CAD, Python, sensor fusion, PID control</dd>
           </dl>
         </aside>
         <div>
-          <p class="kicker">Mechanical design</p>
-          <h3>Backpack holder</h3>
-          <p>Designed and built a backpack holder as a hands-on engineering design project.</p>
+          <p class="kicker">Design · Perception · Control</p>
+          <h3>Autonomous human-following carrier</h3>
+          <ul class="bullets">
+            <li><strong>Mechanical &amp; CAD design:</strong> Prototyped physical chassis components using CAD modeling and 3D printing to house the compute and sensor suite securely.</li>
+            <li><strong>Perception &amp; tracking:</strong> Implemented RGB-D depth tracking and LiDAR data streams to lock onto and track human movement dynamically.</li>
+            <li><strong>Closed-loop safety control:</strong> Engineered reactive velocity and braking algorithms so the platform halts at a minimum safe distance whenever the target stops.</li>
+          </ul>
           <figure style="margin-top:24px;max-width:320px">
             <video src="pati_video.webm" autoplay muted loop playsinline controls preload="metadata" aria-label="Wheeled robot carrying a bag and water bottle across a building atrium"></video>
-            <figcaption>The robot carrying items.</figcaption>
+            <figcaption>The carrier transporting a bag and water bottle.</figcaption>
           </figure>
         </div>
       </article>
@@ -894,8 +909,8 @@ section[id] { scroll-margin-top: 64px; }
       <div class="stack">
         <div><h4>Languages</h4><ul><li>C++17</li><li>Python</li><li>CUDA</li></ul></div>
         <div><h4>Simulation &amp; learning</h4><ul><li>Isaac Sim / Isaac Lab</li><li>MuJoCo</li><li>Warp, PhysX, OpenUSD</li></ul></div>
-        <div><h4>Robotics</h4><ul><li>ROS2</li><li>PCL</li><li>EKF sensor fusion</li><li>Kinematics &amp; planning</li></ul></div>
-        <div><h4>Hardware</h4><ul><li>Embedded C++</li><li>PID control</li><li>HIL testing</li><li>Pypot / servo bring-up</li></ul></div>
+        <div><h4>Robotics</h4><ul><li>ROS2</li><li>PCL</li><li>Sensor fusion (EKF)</li><li>SLAM</li><li>Kinematics &amp; planning</li></ul></div>
+        <div><h4>Hardware</h4><ul><li>CAD</li><li>Embedded C++</li><li>PID control</li><li>HIL testing</li><li>Pypot / servo bring-up</li></ul></div>
       </div>
     </section>
 
