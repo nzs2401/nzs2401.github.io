@@ -610,24 +610,27 @@ section[id] { scroll-margin-top: 64px; }
               <div class="row"><dt>Mass</dt><dd>6.9 kg (per-link verified)</dd></div>
               <div class="row"><dt>Model</dt><dd>Onshape → USD / URDF</dd></div>
               <div class="row"><dt>Simulation</dt><dd>MuJoCo</dd></div>
-              <div class="row"><dt>Policy</dt><dd>PPO (rsl_rl)</dd></div>
               <div class="row"><dt>Hardware</dt><dd>Pypot joint bring-up</dd></div>
               <div class="row"><dt>Status</dt><dd>Simplified model → full 20-DOF</dd></div>
             </dl>
           </div>
+          <figure style="margin-top:24px">
+            <a href="reachable_shot_zone.png" target="_blank"><img src="reachable_shot_zone.png" alt="Heatmap of Monte Carlo kick success probability across the field, with a guaranteed-safe shot boundary (±8° aim, ±15% speed error) inside the nominal perfect-kick boundary" loading="lazy" /></a>
+            <figcaption>FIG. 01 — Reachability-based safe shot zone: guaranteed-safe boundary (±8° aim, ±15% speed error) vs. nominal perfect-kick boundary, over Monte Carlo success probability.</figcaption>
+          </figure>
         </div>
         <div class="case-body">
           <p class="kicker">Michigan Wolverbots · RL &amp; Controls Lead</p>
-          <h3>Humanoid sim-to-real: kinematic modeling &amp; PPO policy training</h3>
+          <h3>Humanoid sim-to-real: kinematic modeling &amp; RL policy training</h3>
           <dl class="breakdown">
             <dt>Challenge</dt>
             <dd>Bridging the sim-to-real gap for a bipedal RoboCup humanoid under tight mass and contact-physics constraints.</dd>
             <dt>Approach</dt>
-            <dd>Exported Onshape CAD to USD/URDF, verified per-link masses, and stabilized MuJoCo contact physics. Trained velocity-tracking PPO policies with multi-objective reward shaping. Currently training on a simplified robot model before scaling up to the full 20-DOF humanoid.</dd>
+            <dd>Exported Onshape CAD to USD/URDF, verified per-link masses, and stabilized MuJoCo contact physics. Trained velocity-tracking RL policies with multi-objective reward shaping. Currently training on a simplified robot model before scaling up to the full 20-DOF humanoid.</dd>
             <dt>Outcome</dt>
             <dd>Debugged reward plateaus and inverted-knee gaits; built physical joint-verification workflows for Pypot hardware bring-up.</dd>
           </dl>
-          <ul class="tags"><li>Reinforcement learning</li><li>PPO</li><li>MuJoCo</li><li>URDF / USD</li><li>Sim-to-real</li></ul>
+          <ul class="tags"><li>Reinforcement learning</li><li>MuJoCo</li><li>URDF / USD</li><li>Sim-to-real</li></ul>
         </div>
       </article>
 
@@ -639,7 +642,7 @@ section[id] { scroll-margin-top: 64px; }
             <figcaption>FIG. 02 — Side-scan sonar simulation in OceanSim</figcaption>
           </figure>
           <figure style="margin-top:24px">
-            <img src="SSS.png" alt="Side-scan sonar simulation in OceanSim" loading="lazy" />
+            <img src="oceansim.png" alt="Side-scan sonar simulation in OceanSim" loading="lazy" />
             <figcaption>FIG. 03 — OceanSim side-scan sonar</figcaption>
           </figure>
         </div>
@@ -806,7 +809,7 @@ section[id] { scroll-margin-top: 64px; }
       </div>
       <div class="stack">
         <div><h4>Languages</h4><ul><li>C++17</li><li>Python</li><li>CUDA</li></ul></div>
-        <div><h4>Simulation &amp; learning</h4><ul><li>Isaac Sim / Isaac Lab</li><li>MuJoCo</li><li>PPO (rsl_rl)</li><li>Warp, PhysX, OpenUSD</li></ul></div>
+        <div><h4>Simulation &amp; learning</h4><ul><li>Isaac Sim / Isaac Lab</li><li>MuJoCo</li><li>Warp, PhysX, OpenUSD</li></ul></div>
         <div><h4>Robotics</h4><ul><li>ROS2</li><li>PCL</li><li>EKF sensor fusion</li><li>Kinematics &amp; planning</li></ul></div>
         <div><h4>Hardware</h4><ul><li>Embedded C++</li><li>PID control</li><li>HIL testing</li><li>Pypot / servo bring-up</li></ul></div>
       </div>
