@@ -374,6 +374,24 @@ figcaption {
   margin-top: 10px;
 }
 
+/* Before / after video pair */
+
+.compare { display: grid; gap: 16px; }
+
+.compare-label {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  padding: 2px 8px;
+  margin-bottom: 6px;
+}
+
+.compare-label.after { color: var(--brand-ink); background: var(--brand); border-color: var(--brand); }
+
 /* Spec sheet (used where there's no image yet) */
 
 .spec {
@@ -669,8 +687,17 @@ section[id] { scroll-margin-top: 64px; }
             </dl>
           </div>
           <figure style="margin-top:24px">
-            <video src="simplerobot.webm" autoplay muted loop playsinline controls preload="metadata" aria-label="Simplified bipedal robot model walking in Isaac Sim"></video>
-            <figcaption>FIG. 01 — Simplified bipedal model in Isaac Sim, used before scaling to the full 20-DOF humanoid.</figcaption>
+            <div class="compare">
+              <div>
+                <span class="compare-label">Before</span>
+                <video src="simplerobot.webm" autoplay muted loop playsinline controls preload="metadata" aria-label="Earlier training run: simplified bipedal model in Isaac Sim"></video>
+              </div>
+              <div>
+                <span class="compare-label after">After</span>
+                <video src="tilted_ankle_version.webm" autoplay muted loop playsinline controls preload="metadata" aria-label="Later training run: tilted-ankle version of the simplified bipedal model moving across the field in Isaac Sim"></video>
+              </div>
+            </div>
+            <figcaption>FIG. 01 — Training progress on the simplified bipedal model in Isaac Sim: earlier run (before) vs. the tilted-ankle version (after), ahead of scaling to the full 20-DOF humanoid.</figcaption>
           </figure>
           <figure style="margin-top:24px">
             <a href="reachable_shot_zone.png" target="_blank"><img src="reachable_shot_zone.png" alt="Heatmap of Monte Carlo kick success probability across the field, with a guaranteed-safe shot boundary (±8° aim, ±15% speed error) inside the nominal perfect-kick boundary" loading="lazy" /></a>
